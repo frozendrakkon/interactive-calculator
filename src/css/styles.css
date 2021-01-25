@@ -1,3 +1,8 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 body {
   padding: 0;
   margin: 0;
@@ -5,6 +10,11 @@ body {
 
 li {
   list-style-type: none;
+}
+
+button {
+  width: 40%;
+  height: 3em;
 }
 
 .container {
@@ -22,11 +32,13 @@ li {
 
 .operators {
   border: 2px solid #000;
+  float: right;
   min-height: 50px;
 }
 
 .nums {
   border: 2px solid #000;
+  width: 75%;
   min-height: 430px;
 }
 /*# sourceMappingURL=styles.css.map */
