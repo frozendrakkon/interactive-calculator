@@ -5,6 +5,7 @@
 
 body {
   padding: 0;
+  background-color: #e7d2d2;
   margin: 0;
 }
 
@@ -31,8 +32,7 @@ button {
 }
 
 .display {
-  min-height: 3em;
-  border: 3px solid black;
+  min-height: 5em;
   background-color: #ffffff;
 }
 
