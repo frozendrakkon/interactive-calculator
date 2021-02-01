@@ -18,9 +18,22 @@ const zero = document.getElementById("0")
 
 const display = document.getElementById("display")
 
-function displayShowing(nums) {
-    nums.onclick = function() {
-        display.innerText = "1"
-    }
+function calculator() {
+
+function displayShowingNums(...nums) {
+      nums.forEach((_, index) => {
+          nums[index].onclick = function() {
+              display.innerText += index  
+        }
+    })
 }
-displayShowing(one, two, three)
+
+function displayClear() {
+    zeroing.onclick = (() => display.innerText = "")
+}
+
+displayClear()
+displayShowingNums(zero, one, two, three, four, five, six, seven, eight, nine)
+
+}
+calculator()
