@@ -20,23 +20,31 @@ const display = document.getElementById("display");
 
 function calculator() {
 
+    let result = 0
+
     function showNumsDisplay(...nums) {
         nums.forEach((_, index) => {
             nums[index].onclick = function () {
                 // * удаляем ноль на дисплее
-                if (display.textContent == 0) {
+                if (display.textContent == "0" || display.textContent == "+" || display.textContent == "-" || display.textContent == "*" || display.textContent == "/" || display.textContent == "=") {
                     display.innerText = "";
                 }
-                    let displayData = display.innerText += index;
-                    // * Сохраняем данные на дисплее в session storage
-                    sessionStorage.setItem("displayData", displayData)
+                let displayNum = display.innerText += nums[index].textContent;
+                // * Сохраняем данные на дисплее в session storage
+                sessionStorage.setItem("displayNum", displayNum)
             };
         });
     }
-    showNumsDisplay( zero, one, two, three, four, five, six, seven, eight, nine);
+    showNumsDisplay(zero, one, two, three, four, five, six, seven, eight, nine);
 
-    function showOperatorsDisplay() {
-        
+    function showOperatorsDisplay(...operators) {
+        operators.forEach((_, index) => {
+            operators[index].onclick = function () {
+                let displayOperator = display.innerText = operators[index].textContent;
+                // * Сохраняем данные последнего оператора на дисплее в session storage
+                sessionStorage.setItem("displayOperator", displayOperator)
+            };
+        });
     }
     showOperatorsDisplay(plus, minus, multiplication, division, equally)
 
@@ -47,8 +55,12 @@ function calculator() {
     displayClear();
 
     function countPlus() {
-
+        plus.onclick = function() {
+            result += sessionStorage.getItem("displayNum")
+            display.innerHTML = result
+        }
     }
-
+    countPlus()
 }
 calculator();
+// !! 59
