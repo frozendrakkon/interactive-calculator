@@ -20,7 +20,7 @@ const display = document.getElementById("display");
 
 function calculator() {
 
-    let result = 0
+    result = 0
 
     function showNumsDisplay(...nums) {
         nums.forEach((_, index) => {
@@ -49,18 +49,19 @@ function calculator() {
     showOperatorsDisplay(plus, minus, multiplication, division, equally)
 
     function displayClear() {
-        zeroing.onclick = () => (display.innerText = "0");
-        sessionStorage.setItem("displayData", 0)
+        zeroing.onclick = function() {
+            display.innerText = "0";
+            sessionStorage.setItem("displayNum", 0)
+        }
     }
     displayClear();
 
     function countPlus() {
-        plus.onclick = function() {
-            result += sessionStorage.getItem("displayNum")
-            display.innerHTML = result
+        plus.onclick = function () {
+            let resultStr = sessionStorage.getItem("displayNum")
+            display.innerHTML = +resultStr)
         }
     }
     countPlus()
 }
 calculator();
-// !! 59
