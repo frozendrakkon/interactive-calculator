@@ -18,7 +18,7 @@ button {
   border-radius: 5%;
   border: none;
   height: 3em;
-  margin: 1%;
+  margin-top: 5%;
   min-width: 40px;
 }
 
@@ -30,7 +30,7 @@ button:hover, button:focus, button:active {
 .calc-container {
   background-color: #dddddd;
   border: 1px solid #18A0BF;
-  width: 25%;
+  width: 20%;
   padding: 2%;
   margin: 10% auto;
   -webkit-box-shadow: 9px 6px 23px 7px rgba(0, 0, 0, 0.4);
