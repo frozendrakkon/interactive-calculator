@@ -3,33 +3,43 @@
     box-sizing: border-box
 body
     padding: 0
-    background-color: #e7d2d2
     margin: 0
 li
     list-style-type: none
 
 button
+    background-color: #fff
     width: 45%
+    border-radius: 5%
+    border: none
     height: 3em
+    margin: 1%
     min-width: 40px
+    &:hover, &:focus, &:active
+        border: none
+        background-color: #c4c2c2
+        
 .calc-container
-    background-color: #50afee
+    background-color: #dddddd
+    border: 1px solid #18A0BF;
     width: 25%
+    padding: 2%
     margin: 10% auto
+    box-shadow: 9px 6px 23px 7px rgba(0,0,0,0.4)
     @media ( max-width: 768px  )
         width: 100%
 
 .display
-    min-height: 5em
+    min-height: 6em
     background-color: #ffffff
     p
         overflow-wrap: anywhere
         text-align: right
+        padding: 5%
         font-size: 30px
 .container
     padding: 5% 0 5% 0
     display: flex
-    align-items: center
 .operators
     width: 50%
 

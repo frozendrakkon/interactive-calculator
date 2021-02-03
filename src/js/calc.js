@@ -1,5 +1,5 @@
-const plus = document.getElementById("plus");
-const minus = document.getElementById("minus");
+const addition = document.getElementById("addition");
+const subtraction = document.getElementById("subtraction");
 const multiplication = document.getElementById("multiplication");
 const division = document.getElementById("division");
 const equally = document.getElementById("equally");
@@ -18,50 +18,29 @@ const zero = document.getElementById("0");
 
 const display = document.getElementById("display");
 
-function calculator() {
+function showNums(...nums) {
 
-    result = 0
 
-    function showNumsDisplay(...nums) {
-        nums.forEach((_, index) => {
-            nums[index].onclick = function () {
-                // * удаляем ноль на дисплее
-                if (display.textContent == "0" || display.textContent == "+" || display.textContent == "-" || display.textContent == "*" || display.textContent == "/" || display.textContent == "=") {
-                    display.innerText = "";
-                }
-                let displayNum = display.innerText += nums[index].textContent;
-                // * Сохраняем данные на дисплее в session storage
-                sessionStorage.setItem("displayNum", displayNum)
-            };
-        });
-    }
-    showNumsDisplay(zero, one, two, three, four, five, six, seven, eight, nine);
-
-    function showOperatorsDisplay(...operators) {
-        operators.forEach((_, index) => {
-            operators[index].onclick = function () {
-                let displayOperator = display.innerText = operators[index].textContent;
-                // * Сохраняем данные последнего оператора на дисплее в session storage
-                sessionStorage.setItem("displayOperator", displayOperator)
-            };
-        });
-    }
-    showOperatorsDisplay(plus, minus, multiplication, division, equally)
-
-    function displayClear() {
-        zeroing.onclick = function() {
-            display.innerText = "0";
-            sessionStorage.setItem("displayNum", 0)
+    nums.forEach((_, index) => {
+        nums[index].onclick = function () {
+            if (display.textContent == "0" || display.textContent == "+" || display.textContent == "-" || display.textContent == "*" || display.textContent == "/" || display.textContent == "=") {
+                display.innerHTML = ""
+            }
+            display.innerHTML += nums[index].textContent
         }
-    }
-    displayClear();
-
-    function countPlus() {
-        plus.onclick = function () {
-            let resultStr = sessionStorage.getItem("displayNum")
-            display.innerHTML = +resultStr)
-        }
-    }
-    countPlus()
+    })
 }
-calculator();
+showNums(one, two, three, five, six, seven, eight, nine, zero)
+
+
+function countAddition() {}
+
+function countSubtraction() {}
+
+function countMultiplication() {}
+
+function countDivision() {}
+
+function countEqually() {}
+
+function Clear() {}
